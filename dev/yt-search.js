@@ -8,6 +8,8 @@
 	//yt-search.htmlドキュメント
 	var od = (d._currentScript || d.currentScript).ownerDocument;
 
+	var base = od.baseURI.replace(/\/[^\/]*$/, '');
+
 	var prt = Object.create(HTMLElement.prototype);
 	var entryPoint = "https://www.googleapis.com/youtube/v3/search";
 
@@ -198,13 +200,13 @@
 		//スタイルシートを読み込む
 		if(this.hasAttribute("data-theme") && themeList.indexOf(this.getAttribute("data-theme").toLowerCase()) !== -1){
 			var themeName = this.getAttribute("data-theme").toLowerCase();
-			ss.innerHTML = '@import url(yt-search.'+themeName+'.css?v='+version+');';
+			ss.innerHTML = '@import url('+base+'/yt-search.'+themeName+'.css?v='+version+');';
 
 			//属性をセット
 			root.querySelector(".yt-search").setAttribute("data-theme", themeName);
 		}else{
 			//デフォルトスタイルシート
-			ss.innerHTML = '@import url(yt-search.css?v='+version+');';
+			ss.innerHTML = '@import url('+base+'/yt-search.css?v='+version+');';
 		}
 		
 		root.insertBefore(ss, root.firstChild);
