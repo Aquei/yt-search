@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+<title>test</title>
+<style>
+	#wrap{
+		max-width:800px;
+		margin:10px auto;
+	}
+
+	/*
+		for shadow dom supported browser
+	*/
+	yt-search::shadow a.btn{
+		font-family:FontAwesome,inherit;
+	}
+
+	/*
+		for polyfilled browser
+	*/
+	yt-search a.btn{
+		font-family:FontAwesome,sans-serif;
+	}
+</style>
+
+		<script src="https://cdn.jsdelivr.net/webcomponentsjs/0.7.0/webcomponents.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/fontawesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		<!-- <link href="https://cdn.jsdelivr.net/bootswatch/3.3.2/darkly/bootstrap.min.css" rel="stylesheet"> -->
+		<link href="yt-search.html" rel="import">
+	</head>
+	<body>
+		<div id="wrap">
+			<yt-search
+				data-query="datf punk"
+				data-play-btn-txt=" 再生"
+				data-playing-btn-txt=" 再生中"
+				data-max-results="7"
+				data-api-key="AIzaSyDUlyqKGQuiRTnj1N5Y_iCJIVJMAgYMZ3U"
+				data-params="{}"
+				data-shadow-dom=""
+				data-scroll="on"
+				data-theme="cyborg"
+				></yt-search>
+		</div>
+	</body>
+
+</html>
+

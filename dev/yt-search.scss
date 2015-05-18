@@ -1,0 +1,21 @@
+.yt-search{
+
+
+
+	//@import "_style";
+	//	bootstrap 3をインポートする
+	@import "_bootstrap-custom";
+
+	//bodyをコピーする
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	color: $text-color;
+	background-color: $body-bg;
+
+	@import "style";
+
+}
+
+
+

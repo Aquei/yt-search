@@ -1,0 +1,22 @@
+.hidden{
+	display:none;
+}
+
+
+
+.videos{
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content:space-around;
+
+	.video-item{
+		display:inline-block;
+		max-width:500px;
+		min-width:200px;
+		margin:0.3em 0.6em;
+		//flex:(500px / 300px) 1 300px; //最小が300pxで最大が500px
+		flex: 1;
+	}
+}
