@@ -339,7 +339,7 @@
 
 
 		if(this.getAttribute("data-scroll") === "on" && !scrollOff){
-			var pos = this._data.queryCache.iframe.getBoundingClientRect();
+			var pos = this.getBoundingClientRect();
 			var scrollOptions = {
 				top: Math.round(pos.top),
 				left: Math.round(pos.left),
