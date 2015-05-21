@@ -230,7 +230,7 @@
 		}
 
 		//検索結果0番目のビデオをセット
-		this.setVideo(json.items[0], false, false);
+		this.setVideo(json.items[0], false, true);
 
 		//検索結果が2件以上ならリストを表示
 		if(json.items.length > 1){
@@ -339,17 +339,18 @@
 
 
 		if(this.getAttribute("data-scroll") === "on" && !scrollOff){
-			var pos = this._data.queryCache.iframe.getBoundingClientRect();
+			var pos = this.getBoundingClientRect();
 			var scrollOptions = {
-				top: Math.round(pos.top),
-				left: Math.round(pos.left),
+				top:pos.top + window.pageYOffset,
+				left:pos.left + window.pageXOffset,
 				behavior: "smooth"
 			};
+			console.log(scrollOptions);
 
 			if('scrollBehavior' in document.documentElement.style){
 				window.scrollTo(scrollOptions);
 			}else if(window.jQuery && jQuery.scrollTo){
-				jQuery(window).scrollTo({top:scrollOptions.top, left:scrollOptions.left})
+				jQuery(window).scrollTo({top:scrollOptions.top, left:scrollOptions.left}, 800)
 			}else{
 				window.scrollTo(scrollOptions.left, scrollOptions.top);
 			}
