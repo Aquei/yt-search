@@ -3,7 +3,7 @@
 
 	var d = document;
 
-	var version = "1.0.0";
+	var version = "1.0.1";
 
 	//yt-search.htmlドキュメント
 	var od = (d._currentScript || d.currentScript).ownerDocument;
