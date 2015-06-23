@@ -157,8 +157,8 @@
 	prt._check = function(){
 		var opt = this._data.params;
 		if(
-				opt.q ||
-				opt.key || 
+				opt.q && 
+				opt.key && 
 				opt.part
 		  ){
 			//OKなのでリクエストしたり
